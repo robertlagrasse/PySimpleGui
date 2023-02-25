@@ -25,16 +25,19 @@ fileBrowseButton = psg.FilesBrowse('File(s)', key='fileBrowseButton', enable_eve
 folderBrowseResult = psg.Input('', key='folderBrowseResult', enable_events=True)
 folderBrowseButton = psg.FolderBrowse('Folder', key='folderBrowseButton', enable_events=True)
 
+popupButton = psg.Button('Popup', key='popupButton')
 windowLayout = [[label1, input1, button1],
                 [label2, input2, button2],
                 [label3, input3, button3],
                 [listbox, button4],
                 [currentSelectionlabel],
                 [fileBrowseButton, fileBrowseResult],
-                [folderBrowseButton, folderBrowseResult]]
+                [folderBrowseButton, folderBrowseResult],
+                [popupButton]]
 
 # Instantiate a window. Specify a layout using objects defined above
 # Layout is a list of lists. Each list is a row of objects
+psg.theme('DarkBlue2')
 window = psg.Window('Window Name',
                     layout=windowLayout,
                     font=('Helvetica', 20))
@@ -60,6 +63,8 @@ while True:
             print(values['fileBrowseButton'])
         case 'folderBrowseResult':
             print(values['folderBrowseButton'])
+        case 'popupButton':
+            psg.popup("Like it is hot", font=("Helvetica",20))
         case psg.WIN_CLOSED:
             break
 
