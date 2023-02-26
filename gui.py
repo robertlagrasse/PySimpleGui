@@ -15,7 +15,12 @@ button3 = psg.Button('Button3', key='button3')
 dataList = ['data1', 'data2', 'data3']
 listbox = psg.Listbox(values=dataList, key='listbox',
                       enable_events=True, size=[45, 10])
-button4 = psg.Button('Button4', key='button4')
+
+# Making this a picture button
+button4 = psg.Button(size=2, image_source='image.png',
+                     mouseover_colors='LightBlue2', tooltip='Doot!',
+                    key='button4')
+
 currentSelectionlabel = psg.Text('Current Selection', key='csl')
 
 fileBrowseLabel = psg.Text('File Browse')
